@@ -1,0 +1,70 @@
+package p1;
+
+public class Demo {
+
+	public static void main(String[] args) {
+		StudentOld s1 = new StudentOld(); // using java default constructor
+		System.out.println(s1);
+		s1.curve(-0.2);
+		System.out.println(s1);
+		
+		
+//		Student s2 = new Student("Eve", "2222", 4.0);
+//		System.out.println(s2);
+//		
+//		s2 = s1;
+//		
+//		System.out.println(s1 == s2);
+//		
+//		System.out.println();
+		
+		
+//		System.out.print("Name=" + s1.getName());
+//		System.out.print("\tID=" + s1.getId());
+//		System.out.print("\t\tGPA=" + s1.getGpa());
+		
+//		
+//		String s1 = "Adam";
+//		String s2 = "Adam";
+//		System.out.println(s1 == s2);
+//		s2 = "Eve";
+//		System.out.println(s1 == s2);
+//		s2 = "Adam";
+//		System.out.println(s1 == s2);
+//		
+//		
+//		s2 = null;
+//		System.out.println(s1 == s2);
+//		System.out.println(s1);
+//		s1 = null;
+		// object Adam gets garbage collected
+		
+		
+		
+		
+//		Student s1 = new Student();
+//		Student s2 = new Student();
+//		s1.setName("Juliet");
+//		System.out.println(s1.getName());
+//		System.out.println(s2.getName());
+//		System.out.println(s1 == s2);
+//		
+//		s1.setName("Adam");
+//		s1.setId("1111");
+//		s1.setGpa(3.0);
+//		
+//		System.out.println(s1.getName());
+//		System.out.println(s1.getId());
+//		System.out.println(s1.getGpa());
+//		
+//		Student s2 = s1;
+//		Student s3 = s2;
+//		Student s4 = s1;
+//		
+//		s3.setName("Eve");
+//		s1.setGpa(1.0);
+//		System.out.println(s4.getGpa());
+		
+	}
+
+}

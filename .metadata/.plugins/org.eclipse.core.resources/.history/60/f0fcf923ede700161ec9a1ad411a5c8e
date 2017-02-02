@@ -1,0 +1,32 @@
+package p1;
+
+import java.util.Arrays;
+
+public class Demo {
+
+	public static void main(String[] args) {
+		Student[] sArray = new Student[10];
+		Instructor[] iArray = new Instructor[3];
+		
+		sArray[0] = new Student("Adam", 3.5, "1111");
+		sArray[1] = new Student("Bill", 2.5, "2222");
+		sArray[2] = new Student("Cate", 3.75, "4444");
+		sArray[3] = new Student("David", 2.56, "3333");
+		sArray[4] = new Student("Ellen", 4.0, "0000");
+		
+		iArray[0] = new Instructor("John", 20000, "9999");
+		iArray[1] = new Instructor("Jane", 30000, "8888");
+		
+		System.out.println(Arrays.toString(iArray));
+		Arrays.sort(iArray);
+		System.out.println(Arrays.toString(iArray));
+		System.out.println("-----------------------");
+		System.out.println(Arrays.toString(sArray));
+		Arrays.sort(sArray);
+		System.out.println(Arrays.toString(sArray));
+		
+		
+		
+	}
+
+}

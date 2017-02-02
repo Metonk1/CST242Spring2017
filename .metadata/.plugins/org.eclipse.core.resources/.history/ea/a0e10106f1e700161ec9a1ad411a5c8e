@@ -1,0 +1,17 @@
+package inheritance;
+
+public class Demo {
+
+	public static void main(String[] args) {
+		Person[] pArray = new Person[10];
+		pArray[0] = new Student("Adam", 3.5, "1111");
+		pArray[1] = new Student("Bill", 2.5, "2222");
+		pArray[2] = new Student("Cate", 3.75, "4444");
+		pArray[3] = new Student("David", 2.56, "3333");
+		pArray[4] = new Student("Ellen", 4.0, "0000");
+		
+		pArray[5] = new Instructor("John", 20000, "9999");
+		pArray[6] = new Instructor("Jane", 30000, "8888");
+	}
+
+}

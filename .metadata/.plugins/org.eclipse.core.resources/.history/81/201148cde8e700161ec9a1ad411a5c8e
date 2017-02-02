@@ -1,0 +1,20 @@
+package p1;
+
+import java.util.Scanner;
+
+public class Demo {
+
+	public static void main(String[] args) {
+		Scanner kb = new Scanner(System.in);
+		System.out.println("Enter Celsius degree: ");
+		double c = kb.nextDouble();
+		double f = TemperatureConversion.c2f(c);
+		System.out.println("The Fahrenheit value is: " + f);
+		
+		System.out.println("Enter Fahrenheit degree: ");
+		f = kb.nextDouble();
+		c = TemperatureConversion.f2c(f);
+		System.out.println("The Fahrenheit value is: " + c);
+	}
+
+}
