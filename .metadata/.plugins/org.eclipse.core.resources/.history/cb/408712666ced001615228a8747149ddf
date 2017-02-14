@@ -1,9 +1,0 @@
-
-public class Demo {
-
-	public static void main(String[] args) {
-		Person p1 = new Person("Adam", "631-123-4567");
-		System.out.println("P1's ID is: " + p1.getId());
-	}
-
-}
