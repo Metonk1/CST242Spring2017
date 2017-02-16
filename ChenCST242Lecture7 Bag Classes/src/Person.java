@@ -3,7 +3,7 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
-public class Person {
+public abstract class Person {
 	private String lName;
 	private String fName;
 	private String id;
@@ -24,7 +24,6 @@ public class Person {
 			idNum = readFile.nextInt();
 			readFile.close();
 		} catch (FileNotFoundException e1) {
-			// e1.printStackTrace();
 		}
 
 		this.id = String.valueOf(idNum++);
@@ -40,7 +39,7 @@ public class Person {
 		
 //		System.out.println("The last name is: " + lName);
 //		System.out.println("The id number is: " + ("PPPPPP" + id));
-		System.out.println("The real id number is: " + id);
+//		System.out.println("The real id number is: " + id);
 
 		// save idNum into id.txt file for next object creation
 		try {
@@ -73,11 +72,15 @@ public class Person {
 	}
 
 	public void setAddress(Address address) {
-		this.address = address;
+		this.address = new Address(address);
 	}
 
 	public String getId() {
 		return id;
+	}
+	
+	protected void setId(String id) {
+		this.id = id;
 	}
 
 	@Override

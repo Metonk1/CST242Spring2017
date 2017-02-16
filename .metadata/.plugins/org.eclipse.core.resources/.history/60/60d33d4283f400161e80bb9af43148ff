@@ -1,0 +1,41 @@
+
+public class Demo {
+
+	public static void main(String[] args) {
+		Address address1 = new Address("1", "Main St.", "Selden", "NY", "11784");
+		Address address2 = new Address("100", "College Road", "Selden", "NY", "11784");
+		
+		String[] coursesTook = {"CST111", "CST112", "MAT141"};
+		String[] coursesTaking = {"CST242", "MAT142"};
+		String[] coursesToTake = {"CST222", "CST272"};
+		
+		Person p1 = new Student("Adam", "John", new Address(address1), coursesTook, coursesTaking, coursesToTake);
+		Person p2 = new Faculty("Eve", "Jane", new Address(address2), "R304", 10000);
+		
+		Person p3 = new Student("Billy", "John", new Address(address1), coursesTook, coursesTaking, coursesToTake);
+		Person p4 = new Faculty("Johnny", "Jane", new Address(address2), "R304", 10000);
+		int maxSize = 100;
+		BodyBag theBag = new BodyBag(maxSize);
+		theBag.add(p1);
+		theBag.add(p2);
+		theBag.add(p3);
+		theBag.add(p4);
+		int nStudent = 0;
+		int nFaculty = 0;
+		for(int i = 0; i < theBag.getDataItems(); i++) {
+			if(theBag.getPersonArray()[i] instanceof Student) {
+				nStudent++;
+			} else {
+				nFaculty++;
+			}
+		}
+		System.out.println("Number of Student: " + nStudent);
+		System.out.println("Number of Faculty: " + nFaculty);
+		
+		System.out.println(theBag.findById("36"));
+		System.out.println(theBag.findById("34"));
+		System.out.println(theBag.findById("38"));
+//		theBag.display();
+	}
+
+}

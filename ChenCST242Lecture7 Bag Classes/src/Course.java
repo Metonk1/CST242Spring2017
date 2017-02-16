@@ -1,9 +1,9 @@
 
 public class Course {
-	private String courseNumber;
-	private String courseName;
-	private int credits;
-	private String grade;
+	private String courseNumber; //CST111
+	private String courseName; // Intro to CS
+	private int credits;		// 4
+	private String grade;	// "B+"
 
 	public Course(String courseNumber, String courseName, int credits, String grade) {
 		this.courseNumber = courseNumber;

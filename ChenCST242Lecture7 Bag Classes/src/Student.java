@@ -1,3 +1,4 @@
+import java.util.Arrays;
 
 public class Student extends Person {
 	private double gpa;
@@ -12,6 +13,8 @@ public class Student extends Person {
 		this.coursesTook = coursesTook;
 		this.coursesTaking = coursesTaking;
 		this.coursesToTake = coursesToTake;
+		super.setId("S" + super.getId().substring(1));
+		System.out.println("New ID seen from the Student constructor: " + super.getId());
 	}
 
 	public double getGpa() {
@@ -19,7 +22,7 @@ public class Student extends Person {
 	}
 
 	public void setGpa(String[] coursesTook) {
-		
+
 		this.gpa = gpa;
 	}
 
@@ -46,7 +49,16 @@ public class Student extends Person {
 	public void setCoursesToTake(String[] coursesToTake) {
 		this.coursesToTake = coursesToTake;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Student [" + super.toString() + ", gpa=" + gpa + ", coursesTook="
+				+ Arrays.toString(coursesTook) + ", coursesTaking=" + Arrays.toString(coursesTaking)
+				+ ", coursesToTake=" + Arrays.toString(coursesToTake) + "]";
+	}
+
+
+
 	
 
 }
