@@ -1,0 +1,57 @@
+package p1;
+
+import javafx.application.Application;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+public class GUIDemo extends Application {
+
+	public static void main(String[] args) {
+		launch(args);
+	}
+
+	@Override
+	public void start(Stage primaryStage) throws Exception {
+		Label nameLabel = new Label("Name: ");
+		Button newButton = new Button("NEW");
+		TextField nameField = new TextField();
+		HBox myHBox1 = new HBox(20);
+		myHBox1.setAlignment(Pos.CENTER);
+		myHBox1.getChildren().addAll(nameLabel, nameField, newButton);
+		
+		Label idLabel1 = new Label("ID:   ");
+		Button findButton = new Button("FIND");
+		TextField idField = new TextField();
+		HBox myHBox2 = new HBox(20);
+		myHBox2.setAlignment(Pos.CENTER);
+		myHBox2.getChildren().addAll(idLabel1, idField, findButton);
+		
+		Label idLabel2 = new Label("ID:   ");
+		Button removeButton = new Button("REMOVE");
+		TextField idField2 = new TextField();
+		HBox myHBox3 = new HBox(20);
+		myHBox3.setAlignment(Pos.CENTER);
+		myHBox3.getChildren().addAll(idLabel2, idField2, removeButton);
+		
+		TextArea outputArea = new TextArea();
+		
+		VBox root = new VBox(30);
+		
+		root.getChildren().addAll(myHBox1, myHBox2, myHBox3, outputArea);
+		root.setAlignment(Pos.CENTER);
+		
+		
+		Scene scene = new Scene(root, 400, 800);
+		primaryStage.setScene(scene);
+		primaryStage.setTitle("My JavaFX");
+		primaryStage.show();
+	}
+
+}

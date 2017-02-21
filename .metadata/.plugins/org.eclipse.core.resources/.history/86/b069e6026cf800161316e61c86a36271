@@ -1,0 +1,19 @@
+package p1;
+
+public class Demo {
+
+	public static void main(String[] args) {
+		Student s1 = new Student("Adam");
+		Student s2 = new Student("Billy");
+		StudentBag theBag = new StudentBag();
+		theBag.insert(s1);
+		theBag.insert(s2);
+		System.out.println("Before removal: ");
+		theBag.display();
+//		System.out.println(theBag.findById("0"));
+		theBag.removeById("1");
+		System.out.println("After removal: ");
+		theBag.display();
+	}
+
+}

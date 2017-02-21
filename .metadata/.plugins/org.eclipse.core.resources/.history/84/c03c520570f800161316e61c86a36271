@@ -1,0 +1,31 @@
+package p1;
+
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.HBox;
+import javafx.stage.Stage;
+
+public class GUIDemo extends Application {
+
+	public static void main(String[] args) {
+		launch(args);
+	}
+
+	@Override
+	public void start(Stage primaryStage) throws Exception {
+		Label nameLabel = new Label("Name: ");
+		Button newButton = new Button("NEW");
+		TextField nameField = new TextField();
+		HBox myHBox = new HBox(20);
+		myHBox.getChildren().addAll(nameLabel, nameField, newButton);
+		
+		Scene scene = new Scene(myHBox, 400, 200);
+		primaryStage.setScene(scene);
+		primaryStage.setTitle("My JavaFX");
+		primaryStage.show();
+	}
+
+}
