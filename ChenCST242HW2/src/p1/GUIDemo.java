@@ -19,18 +19,19 @@ public class GUIDemo extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		
+
 		StudentBag theBag = new StudentBag();
-		
+		theBag.load();
+
 		TextArea outputArea = new TextArea();
-		
+
 		Label nameLabel = new Label("Name: ");
 		Button newButton = new Button("NEW");
 		TextField nameField = new TextField();
 		HBox myHBox1 = new HBox(20);
 		myHBox1.setAlignment(Pos.CENTER);
 		myHBox1.getChildren().addAll(nameLabel, nameField, newButton);
-		
+
 		newButton.setOnAction(e -> {
 			String name = nameField.getText();
 			Student s = new Student(name);
@@ -38,19 +39,27 @@ public class GUIDemo extends Application {
 			nameField.clear();
 			System.out.println(s);
 		});
-		
+
 		Label idLabel1 = new Label("ID:   ");
 		Button findButton = new Button("FIND");
 		TextField idField = new TextField();
 		HBox myHBox2 = new HBox(20);
 		myHBox2.setAlignment(Pos.CENTER);
 		myHBox2.getChildren().addAll(idLabel1, idField, findButton);
-		
+
 		findButton.setOnAction(e -> {
 			String id = idField.getText();
-			outputArea.appendText(theBag.findById(id).toString());
+			if (theBag.findById(id) == null) {
+				outputArea.appendText("This student cannot be found.");
+			} else {
+				outputArea.appendText(theBag.findById(id).toString() + "\n");
+			}
+			for (Student s : theBag.getList()) {
+				System.out.println(s);
+			}
+			idField.clear();
 		});
-		
+
 		Label idLabel2 = new Label("ID:   ");
 		Button removeButton = new Button("REMOVE");
 		TextField idField2 = new TextField();
@@ -58,15 +67,27 @@ public class GUIDemo extends Application {
 		myHBox3.setAlignment(Pos.CENTER);
 		myHBox3.getChildren().addAll(idLabel2, idField2, removeButton);
 		
+		HBox myHBox4 = new HBox(50);
+		Button saveButton = new Button("SAVE");
+		Button loadButton = new Button("LOAD");
+		myHBox4.getChildren().addAll(loadButton, saveButton);
+		myHBox4.setAlignment(Pos.CENTER);
 		
+		saveButton.setOnAction(event -> {
+			theBag.save();
+		});
 		
+		loadButton.setOnAction(event -> {
+			theBag.load();
+		});
+		
+
 		VBox root = new VBox(30);
-		
-		root.getChildren().addAll(myHBox1, myHBox2, myHBox3, outputArea);
+
+		root.getChildren().addAll(myHBox1, myHBox2, myHBox3, outputArea, myHBox4);
 		root.setAlignment(Pos.CENTER);
-		
-		
-		Scene scene = new Scene(root, 400, 400);
+
+		Scene scene = new Scene(root, 400, 500);
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("My JavaFX");
 		primaryStage.show();
